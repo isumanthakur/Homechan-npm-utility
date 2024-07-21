@@ -1,0 +1,11 @@
+{
+    "rules": {
+      "styling/bg-color": ["warn", { "palette": ["#ffffff", "#000000"] }],
+      "styling/dark-bg-color": ["warn", { "palette": ["#1a1a1a", "#333333"] }],
+      "styling/dark-text-color": ["warn", { "palette": ["#e0e0e0", "#cccccc"] }],
+      "styling/text-color": ["warn", { "palette": ["#000000", "#666666"] }],
+      "accessibility/contrast-ratio": ["warn"]
+     
+    }
+  }
+  

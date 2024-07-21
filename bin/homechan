@@ -1,0 +1,92 @@
+#!/usr/bin/env node
+
+const { Command } = require('commander');
+const program = new Command();
+
+const addBasicCode = require('../commands/basic');
+const { generateAbout } = require('../commands/about');
+const { generateContact } = require('../commands/contact');
+const { generateHeader } = require('../commands/header');
+const { generateFooter } = require('../commands/footer');
+const { generateHome } = require('../commands/home');
+const { generateLogin } = require('../commands/login');
+const { generateSignup } = require('../commands/signup');
+const { generateThemeSlice } = require('../commands/themeSlice');
+
+program
+  .version('1.0.0')
+  .description('Homechan CLI - A combined utility for style enforcement and boilerplate generation');
+
+program
+  .command('basic')
+  .description('Generate a basic boilerplate')
+  .action(() => {
+    const dir = process.cwd();
+    addBasicCode(dir);
+  });
+
+program
+  .command('about')
+  .description('Generate an about page')
+  .action(() => {
+    const dir = process.cwd();
+    generateAbout(dir);
+  });
+
+program
+  .command('contact')
+  .description('Generate a contact page')
+  .action(() => {
+    const dir = process.cwd();
+    generateContact(dir);
+  });
+
+program
+  .command('header')
+  .description('Generate a header component')
+  .action(() => {
+    const dir = process.cwd();
+    generateHeader(dir);
+  });
+
+program
+  .command('footer')
+  .description('Generate a footer component')
+  .action(() => {
+    const dir = process.cwd();
+    generateFooter(dir);
+  });
+
+program
+  .command('home')
+  .description('Generate a home page')
+  .action(() => {
+    const dir = process.cwd();
+    generateHome(dir);
+  });
+
+program
+  .command('login')
+  .description('Generate a login page')
+  .action(() => {
+    const dir = process.cwd();
+    generateLogin(dir);
+  });
+
+program
+  .command('signup')
+  .description('Generate a signup page')
+  .action(() => {
+    const dir = process.cwd();
+    generateSignup(dir);
+  });
+
+program
+  .command('theme')
+  .description('Generate a themeSlice file')
+  .action(() => {
+    const dir = process.cwd();
+    generateThemeSlice(dir);
+  });
+
+program.parse(process.argv);
